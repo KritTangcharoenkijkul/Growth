@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cinematic Music [No Copyright & Royalty Free] Mystery Investigation INFADOS.mp3-e38ffa5736df2608fe816d70c30f0d2d.mp3str"
+
+[deps]
+
+source_file="res://Cinematic Music [No Copyright & Royalty Free] Mystery Investigation INFADOS.mp3"
+dest_files=[ "res://.import/Cinematic Music [No Copyright & Royalty Free] Mystery Investigation INFADOS.mp3-e38ffa5736df2608fe816d70c30f0d2d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

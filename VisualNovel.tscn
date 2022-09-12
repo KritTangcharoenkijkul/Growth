@@ -1,0 +1,160 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Mystery GoSoundtrack (No Copyright Music).mp3" type="AudioStream" id=1]
+[ext_resource path="res://1926605-bigthumbnail.jpg" type="Texture" id=2]
+[ext_resource path="res://Dialogue.gd" type="Script" id=4]
+[ext_resource path="res://Control.gd" type="Script" id=5]
+[ext_resource path="res://GreatVibes-Regular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://568-5684980_policeman-png-police-officer-cartoon-png-transparent-png.png" type="Texture" id=7]
+[ext_resource path="res://Image1.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_color = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="VisualNovel" type="Node2D"]
+
+[node name="4" type="Position2D" parent="."]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 633.678, 367.861 )
+scale = Vector2( 2.90731, 2.90731 )
+texture = ExtResource( 2 )
+
+[node name="3" type="Position2D" parent="."]
+position = Vector2( 1100.77, 563.801 )
+
+[node name="2" type="Position2D" parent="."]
+position = Vector2( 228.945, 415.861 )
+
+[node name="1" type="Position2D" parent="."]
+position = Vector2( 587.654, 423.163 )
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 107.093
+margin_top = -74.7401
+margin_right = 310.093
+margin_bottom = 41.2599
+rect_pivot_offset = Vector2( -367.954, 314.026 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Officer" type="Sprite" parent="Control"]
+position = Vector2( 966.91, 500.266 )
+scale = Vector2( 0.427017, 0.427017 )
+texture = ExtResource( 7 )
+
+[node name="TextBox" type="ColorRect" parent="Control"]
+margin_left = -71.0
+margin_top = 591.0
+margin_right = 1138.0
+margin_bottom = 791.0
+color = Color( 0.760784, 0.847059, 0.843137, 0.615686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/TextBox"]
+margin_left = 33.0
+margin_top = 78.0
+margin_right = 1172.0
+margin_bottom = 175.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Control/TextBox"]
+
+[node name="Label" type="Label" parent="Control/TextBox"]
+margin_left = 758.958
+margin_top = 11.728
+margin_right = 1187.96
+margin_bottom = 86.728
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Player"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 618.558
+margin_top = 273.621
+margin_right = 1081.56
+margin_bottom = 358.621
+custom_fonts/font = SubResource( 3 )
+text = "Choice 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Control"]
+margin_left = 623.503
+margin_top = 480.099
+margin_right = 1086.5
+margin_bottom = 565.099
+custom_fonts/font = SubResource( 3 )
+text = "Choice 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choice1" type="Label" parent="Control"]
+margin_left = 317.765
+margin_top = 275.044
+margin_right = 674.765
+margin_bottom = 545.044
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "->"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choice2" type="Label" parent="Control"]
+margin_left = 252.196
+margin_top = 478.833
+margin_right = 681.196
+margin_bottom = 553.833
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "->"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image1" type="Sprite" parent="."]
+position = Vector2( 1085.44, 1079.22 )
+scale = Vector2( 1.02241, 1.01168 )
+texture = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="Control" method="_on_Button2_pressed"]

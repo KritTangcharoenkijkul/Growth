@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://titlefont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Image2.png" type="Texture" id=2]
+[ext_resource path="res://Image1.png" type="Texture" id=3]
+[ext_resource path="res://Cutscene.gd" type="Script" id=4]
+[ext_resource path="res://BeginningCutscene.tres" type="Animation" id=5]
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1278.0
+margin_bottom = 724.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BeginningCutscene = ExtResource( 5 )
+
+[node name="Image1" type="Sprite" parent="AnimationPlayer"]
+self_modulate = Color( 1, 1, 1, 0.75 )
+position = Vector2( 637.246, 361.938 )
+texture = ExtResource( 3 )
+
+[node name="Image2" type="Sprite" parent="AnimationPlayer"]
+visible = false
+position = Vector2( 640.823, 361.484 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+visible = false
+margin_left = 449.212
+margin_top = 216.131
+margin_right = 1786.21
+margin_bottom = 347.131
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Anyone!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="AnimationPlayer"]
+visible = false
+margin_left = 150.444
+margin_top = 400.477
+margin_right = 1487.44
+margin_bottom = 531.477
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Call the Rapid Investigator!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
